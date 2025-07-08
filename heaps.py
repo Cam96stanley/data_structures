@@ -44,6 +44,13 @@ class MaxBinaryHeap:
         child_idx = 2 * parent_idx + 1
       else:
         break
+
+def heap_sort(arr):
+  heapify(arr)
+  for end_idx in range(len(arr) - 1, 0, 1):
+    arr[0], arr[end_idx] = arr[end_idx], arr[0]
+    move_down(arr, 0, end_idx - 1)
+  return arr
   
 def heapify(array):
   last_parent_idx = len(array) // 2 - 1
